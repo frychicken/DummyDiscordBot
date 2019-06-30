@@ -16,7 +16,7 @@ public class TheMain extends ListenerAdapter {
     public static void main(String[] args) throws LoginException {
         JDABuilder builder = new JDABuilder(AccountType.BOT);
 
-        builder.setToken("tokens here");
+        builder.setToken("tokens");
         builder.addEventListener(new TheMain());
         builder.build();
     }
@@ -29,7 +29,7 @@ public class TheMain extends ListenerAdapter {
         );
 
         boolean haveRespond = false;
-        ArrayList<String> theRes = new ArrayList<String>();
+        ArrayList<String> theRes = new ArrayList<>();
         BufferedReader reader;
         try {
             reader = new BufferedReader(new FileReader(
@@ -43,7 +43,7 @@ public class TheMain extends ListenerAdapter {
                 try {
                     question = line.substring(line.indexOf("*") + 1, line.indexOf(":"));
                     respond = line.substring(line.indexOf(":") + 1);
-                } catch(Exception e){}
+                } catch(Exception e){System.out.println("Bot will not respond");}
                 if(the_message.equals(question.trim())){
                     event.getChannel().sendMessage("typing...").queue();
                     haveRespond = true;
