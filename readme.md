@@ -1,4 +1,4 @@
-Just a stupid bot I made for studying
+Just a bot I made for studying
 
 for anyone wants to know what this is:
 
